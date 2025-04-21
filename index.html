@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h3>Meal Planner</h3>
+    <ul class="lists">
+      <li><a href="./recipie_search/dashboard.html" target="_blank">Recipies</a></li>
+      <li><a href="#" onclick="redirectToMealPlanner()">Meal Plans</a></li>
+      <li><a href="grocery_cart.php" target="_blank">Grocery Lists</a></li>
+      <li><a href="about.html" target="_blank">About Us</a></li>
+    </ul>
+    <div class="right">
+      <div class="search">
+        <i class="material-symbols-outlined">search</i>
+        <input type="search" name="searchbar" id="searchbar" placeholder="Search Here" />
+      </div>
+      <button><i class="material-symbols-outlined">shopping_cart</i></button>
+
+      <!-- Account Button with Dropdown -->
+      <div class="account-dropdown">
+        <button id="accountBtn"><i class="material-symbols-outlined">account_circle</i></button>
+        <div class="dropdown-menu" id="accountMenu">
+          <div id="userGreeting" style="display: none; font-weight: bold;"></div>
+          <a href="./Login/login.html" id="loginLink">Login</a>
+          <a href="./Registration/register.html" id="signupLink">Sign Up</a>
+          <a href="./Login/logout.php" id="logoutLink" style="display: none;">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Body -->
+  <div class="contentbox">
+    <div class="landing">
+      <div class="content">
+        <h2>Cook, Plan and Eat Smarter</h2>
+        <p>Discover delicious recipes and create perfect meal plans with ease. Your personal kitchen assistant is here.
+        </p>
+        <div class="searchba">
+          <i class="material-symbols-outlined">search</i>
+          <input type="search" name="searchbar" id="mainSearch"
+            placeholder="Search For Recipes, Ingredients, and Cuisines...">
+          <button onclick="searchRecipes()">Find Recipes</button>
+        </div>
+        <div class="box">
+          <button>Quick Dinner</button>
+          <button>Vegetarian</button>
+          <button>Easy Meal Prep</button>
+          <button>High Protein</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Meals Section -->
+  <div class="featured-meals">
+    <h2>Featured Meals</h2>
+    <div class="meal-grid">
+      <div class="meal-card">
+        <img src="https://plus.unsplash.com/premium_photo-1726862844513-26b69cf51a78?q=80&w=2940" alt="Pasta">
+        <div class="meal-info">
+          <h3>Cheesy Garlic Pasta</h3>
+          <p>Perfect for a quick and comforting dinner!</p>
+        </div>
+      </div>
+      <div class="meal-card">
+        <img src="https://images.unsplash.com/photo-1593759608032-9289a5995288?q=80&w=2940" alt="Salad">
+        <div class="meal-info">
+          <h3>Avocado Chickpea Salad</h3>
+          <p>Fresh, healthy, and protein-packed.</p>
+        </div>
+      </div>
+      <div class="meal-card">
+        <img src="https://plus.unsplash.com/premium_photo-1668025336787-95bf461359e3?q=80&w=3001" alt="Burger">
+        <div class="meal-info">
+          <h3>Grilled Chicken Burger</h3>
+          <p>Loaded with flavor and grilled to perfection.</p>
+        </div>
+      </div>
+      <div class="meal-card">
+        <img src="https://images.unsplash.com/photo-1732899830100-e641144f8802?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Litti">
+        <div class="meal-info">
+          <h3>Litti chokha</h3>
+          <p>Loaded with flavor and grilled to perfection</p>
+        </div>
+      </div>
+      <div class="meal-card">
+        <img src="https://www.shutterstock.com/shutterstock/photos/2169885085/display_1500/stock-photo-indian-rajasthani-crunchy-sweet-dish-called-ghevar-or-ghewar-is-an-made-using-refined-flour-2169885085.jpg" alt="ghevar">
+        <div class="meal-info">
+          <h3>Ghevar</h3>
+          <p>Loaded with flavor and grilled to perfection.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <div class="reviews-section">
+    <h2>User Reviews</h2>
+    <div class="review-marquee-wrapper">
+      <div class="review-marquee" id="reviewMarquee">
+        <div class="review-card" tabindex="0">
+          <p>"Loved the meal planner! Made my week so much easier."</p>
+          <h4>- Sarah J.</h4>
+        </div>
+        <div class="review-card" tabindex="0">
+          <p>"The recipes are spot on and super easy to follow."</p>
+          <h4>- Mike D.</h4>
+        </div>
+        <div class="review-card" tabindex="0">
+          <p>"Excellent UI and great for fitness tracking meals."</p>
+          <h4>- Priya S.</h4>
+        </div>
+        <div class="review-card" tabindex="0">
+          <p>"Very helpful tool for my family’s dinner planning."</p>
+          <h4>- Jason L.</h4>
+        </div>
+
+        <!-- Duplicate for seamless loop -->
+        <div class="review-card" tabindex="0">
+          <p>"Loved the meal planner! Made my week so much easier."</p>
+          <h4>- Sarah J.</h4>
+        </div>
+        <div class="review-card" tabindex="0">
+          <p>"The recipes are spot on and super easy to follow."</p>
+          <h4>- Mike D.</h4>
+        </div>
+        <div class="review-card" tabindex="0">
+          <p>"Excellent UI and great for fitness tracking meals."</p>
+          <h4>- Priya S.</h4>
+        </div>
+        <div class="review-card" tabindex="0">
+          <p>"Very helpful tool for my family’s dinner planning."</p>
+          <h4>- Jason L.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Contact Us Form -->
+  <div class="contactform">
+    <div class="left">
+      <h2>Get in Touch</h2>
+      <img src="pngwing.com.png" alt="robo image">
+    </div>
+    <form action="#" method="post" class="right">
+      <h2>Contact us</h2>
+      <div class="formbox">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+      </div>
+      <div class="formbox">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+      </div>
+      <div class="formbox">
+        <label for="message">Message:</label>
+        <textarea id="message" rows="4" name="message" placeholder="Enter Your Query" required></textarea>
+      </div>
+      <div class="btn">
+        <button type="submit" name="send">Send Message</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>About Meal Planner</h3>
+        <p>Meal Planner helps you organize your weekly meals, discover new recipes, and maintain a healthy lifestyle
+          with ease.</p>
+      </div>
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./recipie_search/dashboard.html">Recipes</a></li>
+          <li><a onclick="redirectToMealPlanner()">Meal Plans</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h3>Subscribe to Newsletter</h3>
+        <p>Stay updated with the latest recipes and tips!</p>
+        <input type="email" placeholder="Your Email">
+        <button>Subscribe</button>
+      </div>
+      <div class="footer-box">
+        <h3>Follow Us</h3>
+        <p>Connect with us on social platforms</p>
+        <div class="social-icons">
+          <a href="#">📸</a>
+          <a href="#">📘</a>
+          <a href="#">📺</a>
+          <a href="#">🐦</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Meal Planner. All rights reserved. | Designed with ❤️ by Team Meal Planner</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

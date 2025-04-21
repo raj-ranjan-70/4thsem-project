@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Meal Planner</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #f48209, #e74210);
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-section h2 {
+            color: #f48209;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .team {
+            margin-top: 40px;
+        }
+
+        .team h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .member {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 220px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .member h4 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .member p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .about-section h2 {
+                font-size: 22px;
+            }
+
+            .team-members {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <div class="container">
+        <div class="about-section">
+            <h2>Welcome to Meal Planner!</h2>
+            <p>
+                Our goal is to simplify your meal planning process and make healthy eating easy and accessible.
+                Whether you're planning for a week or just a few days, our tool helps you organize your meals,
+                create grocery lists, and stay on track with your nutrition goals.
+            </p>
+            <p>
+                We believe in the power of planning to reduce food waste, save time, and bring balance to your daily
+                life.
+                This platform is developed with user-friendliness in mind, and we’re continuously improving based on
+                your feedback.
+            </p>
+        </div>
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>
+                At Meal Planner, our mission is to empower individuals and families to eat smarter, live healthier, and
+                simplify their daily lives.
+                We aim to remove the stress of meal planning by providing a user-friendly platform that caters to your
+                personal taste, lifestyle, and schedule.
+            </p>
+        </div>
+        <div class="about-section">
+            <h2>Why Choose Meal Planner?</h2>
+            <ul>
+                <li><strong>Custom Meal Plans:</strong> Tailor your weekly meals to suit your dietary needs and
+                    preferences.</li>
+                <li><strong>Grocery List Generator:</strong> Automatically generate a shopping list based on your
+                    selected meals.</li>
+                <li><strong>Recipe Suggestions:</strong> Smart recipe recommendations based on your ingredients.</li>
+                <li><strong>User-Friendly Interface:</strong> Simple, clean design that’s easy to use on any device.
+                </li>
+                <li><strong>Save & Edit Meals:</strong> Store your favorite meals and edit them whenever needed.</li>
+            </ul>
+
+        </div>
+
+        <div class="team">
+            <h3>Meet the Team</h3>
+            <div class="team-members">
+                <div class="member">
+                    <img src="raushan.jpg" alt="" width="200px">
+                    <h4>Raushan Kumar</h4>
+                    <p>Developer & Designer</p>
+                </div>
+                <div class="member">
+                    <img src="Raj.jpeg" alt="" width="200px">
+                    <h4>Raj Ranjan</h4>
+                    <p>Smart Meal Suggestions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy;
+        <?= date("Y") ?> Meal Planner. All rights reserved.
+    </footer>
+</body>
+
+</html>
