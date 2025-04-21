@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipie search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h3 id="head">Recipie Search</h3>
+        <section class="search-section">
+            <div class="search-header">
+                <input type="text" 
+                       class="search-input" 
+                       id="recipeSearch" 
+                       placeholder="Search recipes by ingredients or name..."
+                       autocomplete="off">
+                <button class="btn btn-primary" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="filters">
+                <div class="filter-tag" data-filter="vegetarian">
+                    <i class="fas fa-leaf"></i>
+                    Vegetarian
+                </div>
+                <div class="filter-tag" data-filter="vegan">
+                    <i class="fas fa-seedling"></i>
+                    Vegan
+                </div>
+                <div class="filter-tag" data-filter="gluten-free">
+                    <i class="fas fa-bread-slice"></i>
+                    Gluten Free
+                </div>
+                <div class="filter-tag" data-filter="low-carb">
+                    <i class="fas fa-weight"></i>
+                    Low Carb
+                </div>
+            </div>
+
+            <div class="loading-spinner" id="loading">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+            </div>
+
+            <div class="recipe-grid" id="recipeResults">
+                <!-- Recipe cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
