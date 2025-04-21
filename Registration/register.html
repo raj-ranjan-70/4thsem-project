@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .formbox {
+            width: 400px;
+            padding: 30px 60px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.7s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .formbox h3 {
+            font-size: 28px;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .box input {
+            width: 100%;
+            padding: 12px 10px;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid #999;
+            background: transparent;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .box label {
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            font-size: 16px;
+            color: #666;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .box input:focus,
+        .box input:valid {
+            border-color: #2d89ef;
+        }
+
+        .box input:focus~label,
+        .box input:valid~label {
+            transform: translateY(-100%);
+            font-size: 13px;
+            color: #2d89ef;
+            background-color: #f5f7fa;
+            padding: 0 5px;
+            left: 5px;
+        }
+
+        .showbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .formbox button {
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 25px;
+            background-color: #2d89ef;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .formbox button:hover {
+            background-color: #1c5db5;
+            transform: scale(1.05);
+        }
+
+        .formbox p {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .formbox a {
+            color: #2d89ef;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+        .formbox a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="formbox">
+            <h3>SignUp</h3>
+            <form action="register.php" method="post" class="form">
+                <div class="box">
+                    <input type="text" name="name" id="uname" required>
+                    <label for="uname">Name</label>
+                </div>
+                <div class="box">
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="box">
+                    <input type="password" name="password" id="pass" required>
+                    <label for="pass">Password</label>
+                </div>
+                <div class="box">
+                    <input type="password" name="conpass" id="conpass" required>
+                    <label for="conpass">Confirm Password</label>
+                </div>
+                <div class="showbox">
+                    <input type="checkbox" name="show" id="show">
+                    <label for="show">Show Password</label>
+                </div>
+                <div class="box">
+                    <button type="submit">SignUp</button>
+                    <p>Already have an Account?<a href="../Login/login.html">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const show = document.getElementById('show');
+        const pass = document.getElementById('pass');
+        const conpass = document.getElementById('conpass');
+
+        show.addEventListener('click', function () {
+            const type = show.checked ? 'text' : 'password';
+            pass.type = type;
+            conpass.type = type;
+        });
+
+        const email = document.getElementById('email');
+        const name = document.getElementById('uname');
+        const form = document.querySelector('form');
+
+        show.addEventListener('click', function () {
+            const type = show.checked ? 'text' : 'password';
+            pass.type = type;
+            conpass.type = type;
+        });
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function isValidName(name) {
+            return /^[A-Za-z][A-Za-z\s]*$/.test(name);
+        }
+
+        function validateForm(e) {
+            if (!isValidName(name.value)) {
+                alert("Name must start with a letter and contain only letters and spaces.");
+                name.focus();
+                e.preventDefault();
+                return false;
+            }
+            if (!isValidEmail(email.value)) {
+                alert("Enter a valid email.");
+                email.focus();
+                e.preventDefault();
+                return false;
+            }
+            if (pass.value.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                pass.focus();
+                e.preventDefault();
+                return false;
+            }
+            if (pass.value !== conpass.value) {
+                alert("Passwords do not match.");
+                conpass.focus();
+                e.preventDefault();
+                return false;
+            }
+            return true;
+        }
+
+        form.addEventListener('submit', validateForm);
+    </script>
+</body>
+
+</html>
